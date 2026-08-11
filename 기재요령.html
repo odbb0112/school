@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중학교 학교생활기록부 기재요령 안내</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-book-open text-3xl"></i>
+                    <h1 class="text-2xl font-bold tracking-tight">중학교 생기부 가이드</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#overview" class="hover:text-blue-200 transition-colors duration-200 font-medium">기재개요</a>
+                    <a href="#sections" class="hover:text-blue-200 transition-colors duration-200 font-medium">항목별 요령</a>
+                    <a href="#precautions" class="hover:text-blue-200 transition-colors duration-200 font-medium">유의사항</a>
+                </nav>
+                <button class="md:hidden text-white hover:text-blue-200 focus:outline-none" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-700 pb-4 px-4">
+            <a href="#overview" class="block py-2 hover:bg-blue-600 rounded px-2" onclick="toggleMobileMenu()">기재개요</a>
+            <a href="#sections" class="block py-2 hover:bg-blue-600 rounded px-2" onclick="toggleMobileMenu()">항목별 요령</a>
+            <a href="#precautions" class="block py-2 hover:bg-blue-600 rounded px-2" onclick="toggleMobileMenu()">유의사항</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="bg-white border-b border-gray-200 py-16 sm:py-24 lg:py-32 overflow-hidden relative">
+            <div class="absolute inset-0 bg-[url('https://placehold.co/1920x600/e0e7ff/1e3a8a?text=Education+Background')] bg-cover bg-center opacity-10"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl mb-4 fade-in">
+                    2026학년도 중학교<br class="hidden sm:block"> 학교생활기록부 기재요령 안내
+                </h2>
+                <p class="max-w-2xl mx-auto text-xl text-gray-500 mt-5 fade-in" style="animation-delay: 0.1s;">
+                    교사, 학생, 학보모를 위한 투명하고 정확한 학생부 기재 가이드라인을 제공합니다. 
+                    본 자료는 교육부 지침을 바탕으로 요약되었습니다.
+                </p>
+                <div class="mt-10 flex justify-center gap-4 fade-in" style="animation-delay: 0.2s;">
+                    <a href="#sections" class="bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors shadow-md">
+                        항목별 살펴보기
+                    </a>
+                    <button onclick="downloadPDF()" class="bg-white text-blue-600 border border-blue-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors shadow-sm flex items-center">
+                        <i class="fas fa-download mr-2"></i> 원본 지침서 다운로드
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-blue-600 font-semibold tracking-wider uppercase text-sm">Overview</span>
+                    <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">기재 기본 원칙</h2>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">학생의 성장과 학습 과정을 객관적이고 사실적으로 기록해야 합니다.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Principle 1 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                            <i class="fas fa-check-circle text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">객관성과 사실성</h3>
+                        <p class="text-gray-600">
+                            추측이나 과장 없이, 학교 교육계획에 따라 학교에서 실시한 교육활동 중 교사가 직접 관찰하고 평가한 내용만을 객관적 사실에 근거하여 입력합니다.
+                        </p>
+                    </div>
+
+                    <!-- Principle 2 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-6">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">공정성 및 신뢰성</h3>
+                        <p class="text-gray-600">
+                            사교육 유발 요인이 큰 항목(공인어학성적, 교외상 등)은 일절 기재할 수 없습니다. 모든 학생에게 공평한 기준이 적용되어야 합니다.
+                        </p>
+                    </div>
+
+                    <!-- Principle 3 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-6">
+                            <i class="fas fa-user-edit text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">학생 중심 기록</h3>
+                        <p class="text-gray-600">
+                            단순한 결과 위주의 기록보다는 학생의 변화와 성장, 잠재력을 보여줄 수 있는 과정 중심의 정성적 기록을 지향합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sections Accordion -->
+        <section id="sections" class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-blue-600 font-semibold tracking-wider uppercase text-sm">Sections</span>
+                    <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">주요 항목별 기재 요령</h2>
+                    <p class="mt-4 text-xl text-gray-500">각 항목을 클릭하여 상세 기재 방법을 확인하세요.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Item 1: 출결상황 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 focus:outline-none flex justify-between items-center" onclick="toggleAccordion('acc-1')">
+                            <span class="font-bold text-lg text-gray-900">1. 출결상황 및 인적·학적사항</span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300" id="icon-1"></i>
+                        </button>
+                        <div id="acc-1" class="hidden px-6 py-4 bg-white border-t border-gray-200">
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li><strong>인적사항:</strong> 학생부의 가장 기본 정보로 변동 사항(개명 등) 발생 시 증빙서류를 바탕으로 신속히 정정합니다.</li>
+                                <li><strong>출결상황:</strong> 질병, 미인정, 기타 결석/지각/조퇴/결과를 정확히 구분하여 기록합니다.</li>
+                                <li>특기사항에는 장기결석 사유(예: 질병명은 기재 불가, '질병결석'으로 처리) 등을 관련 지침에 따라 간략히 기재합니다. (단, 미인정결석은 사유 입력)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: 창의적 체험활동 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 focus:outline-none flex justify-between items-center" onclick="toggleAccordion('acc-2')">
+                            <span class="font-bold text-lg text-gray-900">2. 창의적 체험활동상황 (자·동·진)</span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300" id="icon-2"></i>
+                        </button>
+                        <div id="acc-2" class="hidden px-6 py-4 bg-white border-t border-gray-200">
+                            <ul class="list-disc pl-5 space-y-3 text-gray-600">
+                                <li><strong>자율활동:</strong> 학급 임원 활동, 자치 활동 등 학생의 역할과 기여도를 구체적으로 작성합니다. 정량적 시간 입력과 함께 특기사항을 기재합니다.</li>
+                                <li><strong>동아리활동:</strong> 정규 동아리 중심으로 기재합니다. 자율동아리는 기재하지 않거나(지침 확인 필요), 제한적으로 기재됩니다. 동아리 내에서의 구체적인 역할과 활동 내용을 적습니다.</li>
+                                <li><strong>진로활동:</strong> 학교 교육계획에 의한 진로활동 내용과 이로 인한 학생의 변화 및 성장 내역을 기재합니다. 희망 분야는 학생의 요구가 있을 경우 관련 항목에 기재합니다.</li>
+                                <li><em>※ 봉사활동 실적은 실적만 기록하며, 특기사항은 기재하지 않습니다. (고입 반영 여부 확인 필요)</em></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: 교과학습발달상황 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 focus:outline-none flex justify-between items-center" onclick="toggleAccordion('acc-3')">
+                            <span class="font-bold text-lg text-gray-900">3. 교과학습발달상황 (세특)</span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300" id="icon-3"></i>
+                        </button>
+                        <div id="acc-3" class="hidden px-6 py-4 bg-white border-t border-gray-200">
+                            <div class="bg-blue-50 p-4 rounded-md mb-4 border border-blue-100">
+                                <p class="text-sm text-blue-800 font-medium"><strong>가장 중요한 항목 중 하나입니다.</strong> 학생의 학업 역량과 태도를 보여줍니다.</p>
+                            </div>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li><strong>세부능력 및 특기사항 (세특):</strong> 모든 교과(군)의 모든 학생을 대상으로 입력합니다.</li>
+                                <li>수업 참여도, 학업 성취도, 자기주도적 학습 능력 등을 구체적인 사례(수행평가, 프로젝트, 발표 등)를 바탕으로 교사가 직접 관찰한 내용을 적습니다.</li>
+                                <li>단순히 교육과정 성취기준을 나열하는 것을 지양하고, 학생 개개인의 특성이 드러나도록 개별화하여 작성합니다.</li>
+                                <li>자유학기(년)제 해당 학기는 성취도 대신 '자유학기 활동' 내역을 이수 여부와 함께 구체적으로 서술합니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: 독서활동상황 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 focus:outline-none flex justify-between items-center" onclick="toggleAccordion('acc-4')">
+                            <span class="font-bold text-lg text-gray-900">4. 독서활동상황</span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300" id="icon-4"></i>
+                        </button>
+                        <div id="acc-4" class="hidden px-6 py-4 bg-white border-t border-gray-200">
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li>독서활동은 ISBN에 등재된 도서를 대상으로 하며, 제목과 저자만 기재합니다. (독후감 등 구체적인 활동 내용은 기재하지 않음)</li>
+                                <li>교과 관련 도서는 해당 교과목 교사가, 공통 도서는 담임 교사가 입력합니다.</li>
+                                <li>다만, 수업 중 진행된 심화 독서 활동은 교과세특(세부능력 및 특기사항)에 녹여서 작성할 수 있습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5: 행동특성 및 종합의견 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 focus:outline-none flex justify-between items-center" onclick="toggleAccordion('acc-5')">
+                            <span class="font-bold text-lg text-gray-900">5. 행동특성 및 종합의견 (행발)</span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300" id="icon-5"></i>
+                        </button>
+                        <div id="acc-5" class="hidden px-6 py-4 bg-white border-t border-gray-200">
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li>담임교사가 수시로 관찰한 누가기록을 바탕으로 학생의 인성, 잠재력, 인지적/정의적 특성 등을 종합적으로 서술합니다.</li>
+                                <li>장점 위주로 기재하되, 단점을 기재할 경우에는 이를 극복하기 위한 노력이나 변화 과정을 함께 기록하여 긍정적인 방향으로 작성합니다.</li>
+                                <li>추천서 역할을 대신할 수 있도록 학생을 총체적으로 이해할 수 있는 핵심적인 내용을 담는 것이 좋습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Precautions Section -->
+        <section id="precautions" class="py-16 bg-red-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-center space-x-3 mb-8">
+                    <i class="fas fa-exclamation-triangle text-3xl text-red-600"></i>
+                    <h2 class="text-3xl font-extrabold text-gray-900">기재 금지 사항 (절대 유의)</h2>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow p-6 md:p-8 border-l-4 border-red-500">
+                    <p class="text-lg text-gray-700 mb-6 font-medium">다음 사항들은 학교생활기록부 어떠한 항목에도 절대로 기재해서는 안 됩니다. 위반 시 감사가 이루어질 수 있습니다.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <ul class="list-disc pl-5 space-y-3 text-gray-600">
+                            <li><strong>공인어학시험 성적:</strong> TOEIC, TOEFL, TEPS 등 어떠한 형태의 공인 어학 성적도 기재 불가</li>
+                            <li><strong>교외 수상 실적:</strong> 학교장 승인을 받은 대회라 할지라도 교외에서 주최한 대회의 수상 실적은 일체 기재 불가</li>
+                            <li><strong>교외 인증 시험:</strong> 한국사능력검정시험, 한자급수자격검정 등 각종 교외 인증 시험 성적</li>
+                            <li><strong>모의고사/전국연합학력평가 성적:</strong> 관련 성적 및 원점수, 백분위 등 기재 불가</li>
+                        </ul>
+                        <ul class="list-disc pl-5 space-y-3 text-gray-600">
+                            <li><strong>부모(친인척)의 사회·경제적 지위 암시 내용:</strong> 직장명, 직위, 소득 수준 등</li>
+                            <li><strong>도서출간, 지식재산권(특허 등) 출원·등록 실적:</strong> 발명 아이디어 경진대회 등에서의 단순 출원/등록 사실 포함</li>
+                            <li><strong>논문(소논문) 작성 실적:</strong> 정규 교육과정 외에서 작성한 논문 및 이를 암시하는 '보고서' 등의 표현 주의</li>
+                            <li><strong>해외 어학연수 관련 내용:</strong> 개인적인 해외 어학연수 경험 및 이로 인한 성취 등</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 mb-2">본 웹페이지는 가이드라인 요약본이며, 법적 효력을 갖지 않습니다.</p>
+            <p class="text-gray-400 mb-4">정확한 기재를 위해서는 반드시 교육부에서 매년 배포하는 '학교생활기록부 기재요령' 공식 지침서를 확인하시기 바랍니다.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-home"></i> 교육부 홈페이지</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-question-circle"></i> 자주 묻는 질문</a>
+            </div>
+            <p class="mt-6 text-sm text-gray-500">&copy; 2026 Middle School Record Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+
+        // Toggle accordion for sections
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const iconId = 'icon-' + id.split('-')[1];
+            const icon = document.getElementById(iconId);
+            
+            if (content.classList.contains('hidden')) {
+                // Hide all other accordions first (optional, for a true accordion feel)
+                const allContents = document.querySelectorAll('[id^="acc-"]');
+                const allIcons = document.querySelectorAll('[id^="icon-"]');
+                
+                allContents.forEach(c => {
+                    if(c.id !== id) c.classList.add('hidden');
+                });
+                allIcons.forEach(i => {
+                    if(i.id !== iconId) i.style.transform = 'rotate(0deg)';
+                });
+
+                // Show clicked
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Mock download function
+        function downloadPDF() {
+            // In a real application, this would point to an actual PDF file URL
+            const mockMessage = document.createElement('div');
+            mockMessage.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-50 fade-in';
+            mockMessage.innerHTML = '<i class="fas fa-check-circle mr-2"></i> 최신 기재요령 PDF 다운로드가 시작되었습니다.';
+            document.body.appendChild(mockMessage);
+            
+            setTimeout(() => {
+                mockMessage.style.opacity = '0';
+                mockMessage.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => mockMessage.remove(), 500);
+            }, 3000);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Adjust for fixed header height
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
